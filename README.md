@@ -33,6 +33,7 @@
 ```
 数码医生/
 ├── 数码医生.bat     主菜单（唯一入口）
+├── prepare_ai.bat   一键准备 AI（自检 ollama/模型，含缺失指引）
 ├── 说明书.txt       使用说明
 ├── tools/
 │   ├── check.bat    体检（只读）
@@ -54,17 +55,30 @@
 
 ## 准备 AI（唯一需要动手的部分）
 
-Ollama 程序和模型体积大，不适合放 git，需自行放入 U 盘，目录结构如下：
+Ollama 程序和模型体积大，不适合放 git。两种方式二选一：
+
+**方式 A（推荐，无需翻墙）**：本仓库 Releases 页面自带 **ollama-windows-amd64.zip**（官方便携版，免费开源 MIT 协议），下载后解压，把里面的 `ollama.exe` + `lib\` 放进 `<U盘>/OllamaU盘/ollama/`。
+
+**方式 B**：官网下载 https://ollama.com/download/windows
+
+然后准备模型（免费，二选一）：
+
+1. 找一台能联网的电脑，安装 Ollama 官网版
+2. 运行：`ollama pull qwen2.5:3b`（8G 内存老电脑）或 `ollama pull qwen2.5:7b`（16G 内存推荐）
+3. 把模型目录拷回 U 盘（Windows 上一般在 `C:\Users\<你>\.ollama\models`），放到 `<U盘>/OllamaU盘/models/`
+
+最终目录结构：
 
 ```
 <U盘>/OllamaU盘/
-├── ollama/ollama.exe      # Ollama 便携版（官方 releases 下载）
-└── models/                # qwen2.5:3b 或 qwen2.5:7b（ollama pull qwen2.5:3b）
+├── ollama/                # ollama.exe + lib\（从 release zip 解压）
+├── models/                # qwen2.5 模型（3b 或 7b）
+└── 数码医生/              # 本仓库内容（含 prepare_ai.bat）
 ```
 
-- 脚本通过相对路径自动定位，U 盘换盘符也能跑
-- 本机已有 Ollama 服务时互不干扰：U 盘版固定用 **11435** 端口
-- 3B 模型老电脑（8G 内存）也能跑，约 1-3 分钟；7B 更聪明，推荐 16G+ 内存
+配好后双击 **prepare_ai.bat** 一键自检，全部 ✅ 即插即用。
+
+> 💡 **完全离线 · 完全免费**：部署后 AI 分析全程不联网、不需要任何 API key、数据不出 U 盘。ollama 和 qwen2.5 都是开源免费软件。
 
 ## 修复功能清单（全部可还原）
 

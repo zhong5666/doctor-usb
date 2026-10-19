@@ -139,6 +139,7 @@ Say "自启项统计: HKCU/HKLM Run + 启动夹 合计已检查; 计划任务总
 $ts = Get-Date -Format "yyyyMMdd_HHmmss"
 $root = Split-Path -Parent $base
 $out = Join-Path (Join-Path $root "report") ("deepcheck_" + $ts + ".txt")
+if (-not (Test-Path (Split-Path -Parent $out))) { New-Item -ItemType Directory -Path (Split-Path -Parent $out) | Out-Null }
 [System.IO.File]::WriteAllText($out, ($outLines -join "`r`n"), (New-Object System.Text.UTF8Encoding $true))
 Write-Output ($outLines -join "`r`n")
 Write-Output ""

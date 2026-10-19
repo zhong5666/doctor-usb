@@ -1,0 +1,11 @@
+# 真实报告与备份：含用户电脑隐私（电脑名/用户名/MAC/硬盘序列号/内网IP），一律不入库
+report/
+backup/
+
+# 打包产物（病历卡源码 tools/ps/makecard.py 已入库，exe 不发布）
+*.exe
+*.png
+
+# Python
+__pycache__/
+*.pyc

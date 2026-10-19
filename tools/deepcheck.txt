@@ -1,0 +1,26 @@
+# 数码医生深检特征库 v1
+# 格式:
+#   whitelist:目录名   -> 白名单: %APPDATA%\Roaming\ 下该目录视为正常(微信/开发工具等)
+#   其他行             -> 垃圾软件关键字(子串匹配, 不区分大小写, 命中记为家族)
+# 原则: 保守收录, 宁缺勿滥防误报; 实测遇到新垃圾软件先记录到"实战经验总结.md"再追加
+#
+# ---- 白名单: Roaming 下正常的软件目录 ----
+whitelist:Microsoft
+whitelist:Adobe
+whitelist:Tencent
+whitelist:Kingsoft
+whitelist:Google
+whitelist:JetBrains
+whitelist:uv
+whitelist:Anaconda
+whitelist:pip
+whitelist:Python
+#
+# ---- 知名捆绑/广告软件(学生机重灾区, 保守收录) ----
+2345
+ludashi
+drivergenius
+drivermanager
+birdwallpaper
+yinghu
+kuaiya

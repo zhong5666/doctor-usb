@@ -57,9 +57,9 @@
 
 Ollama 程序和模型体积大，不适合放 git。两种方式二选一：
 
-**方式 A（推荐，无需翻墙）**：本仓库 Releases 页面自带 **ollama-windows-amd64.zip**（官方便携版，免费开源 MIT 协议），下载后解压，把里面的 `ollama.exe` + `lib\` 放进 `<U盘>/OllamaU盘/ollama/`。
+**方式 A（推荐，无需翻墙）**：本仓库 Releases 页面自带 **ollama-cpu-windows.zip**（CPU 通用精简版，约 26MB，免费开源 MIT 协议）——这是从完整版中裁掉 GPU 加速库的最小可运行包，任何 Win10/11 电脑都能跑（无独显也能用，只是慢一点）。下载解压，把里面的 `ollama.exe` + `lib\` 放进 `<U盘>/OllamaU盘/ollama/`。
 
-**方式 B**：官网下载 https://ollama.com/download/windows
+**方式 B**：官网下载完整版 https://ollama.com/download/windows（约 1.4GB，含 CUDA/ROCm/Vulkan GPU 加速，有 NVIDIA 独显的电脑推荐）
 
 然后准备模型（免费，二选一）：
 
